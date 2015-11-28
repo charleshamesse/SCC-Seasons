@@ -1,6 +1,9 @@
 ]);
 
       var options = {
+      	region: 'auto',
+      	sizeAxis: { minValue: 200, maxValue: 200 },
+      	displayMode: 'text',
         displayMode: 'markers',
         colorAxis: {colors: ['#0500ff', '#0044ff', '#00e4ff', '#FFc800', '#FF6400', '#FF0000']}
       };
@@ -9,7 +12,27 @@
       chart.draw(data, options);
     };
     </script>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    circle { stroke-width: 0px; }
+    body { 
+    	font-family: 'Raleway', sans-serif;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    }
+    h1 {
+    	font-weight: normal;
+    }
+    .head {
+    position: absolute;
+    width:100%;
+    top:0;
+    z-index:10;
+    }
+    </style>
   </head>
   <body>
   	<div align="center">
-  	<h1>World's temperature in 
+  	<div class="head" align="center"><h1>World's Temperature in 

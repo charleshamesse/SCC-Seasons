@@ -53,11 +53,8 @@ PrintWriter writer;
         	if(k > 0) {
           // use comma as separator
           String[] values = line.split(cvsSplitBy);
-
-          System.out.println("Country:" + values[0]
-          + " , city: " + values[1] + "");
           
-          data += "['" + values[1] + "',  " + values[2+column].replaceAll(",",".") + "], \n";
+          data += "['" + values[0] + " " + values[1] + "',  " + values[2+column].replaceAll(",",".") + "], \n";
         	}
           k++;
 
