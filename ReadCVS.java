@@ -7,26 +7,26 @@ public class ReadCVS {
     	writeSeason("Spring", 1);
     	writeSeason("Summer", 2);
     	writeSeason("Autumn", 3);
-    
+
 
     }
-    
+
     public static void writeSeason(String sname, int column) {
 PrintWriter writer;
-    	
+
     	try {
     		String name = sname;
 			writer = initWriter(name);
 	    	writer.print(getPart("header.html"));
-	    	
+
 	    	writer.print(run(column));
-	    	
+
 	    	writer.print(getPart("body.html"));
-	    	
+
 	    	writer.print(name);
-	    	
+
 	    	writer.print(getPart("footer.html"));
-	    	
+
 	    	writer.close();
 		} catch (FileNotFoundException | UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
@@ -39,7 +39,7 @@ PrintWriter writer;
     }
     public static String run(int column) {
 
-      String csvFile = "Merci-Charlie.csv";
+      String csvFile = "Merci-Charlie2.csv";
       String data = "['City',   'Temperature'],";
       BufferedReader br = null;
       String line = "";
@@ -53,7 +53,7 @@ PrintWriter writer;
         	if(k > 0) {
           // use comma as separator
           String[] values = line.split(cvsSplitBy);
-          
+
           data += "['" + values[0] + " " + values[1] + "',  " + values[2+column].replaceAll(",",".") + "], \n";
         	}
           k++;
@@ -75,7 +75,7 @@ PrintWriter writer;
       }
       return data;
     }
-    
+
     private static String getPart(String path) {
     	String part = "";
     	BufferedReader br = null;
@@ -101,9 +101,9 @@ PrintWriter writer;
             }
           }
         }
-        
+
         return part;
-    	
+
     }
- 
+
 }
